@@ -2,21 +2,20 @@
 session_start();
 
 if (!isset($_SESSION['todo'])) {
-	$_SESSION['todo'] = [];
+    $_SESSION['todo'] = [];
 }
-$y = $_POST['x'];
-// echo $y;
+$m4 = $_POST['x1'];
+$id = $_POST['id'];
+// echo $id;
+// echo $name;
 
 
-    // foreach($_SESSION['todo'] as $k4 => $v4)
-    // { 
-    //     if($k4 == $y)
-    //     {
-    //         $_SESSION['todo'][$y5]["name"]=$v4["name"];
-        
-    //     }
-    // }
+foreach ($_SESSION['todo'] as $k => $v) {
+    if ($k == $id) {
+        // echo $id;
+        $_SESSION['todo'][$k]["name"] = $m4;
+    }
+}
 
 
-
- 
+echo json_encode($_SESSION['todo']);
